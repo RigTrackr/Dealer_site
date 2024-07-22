@@ -2,7 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: Arial, sans-serif;
+    font-family: "Raleway", sans-serif;
     overflow-x: hidden;
     background: url('../images/background2.jpg') no-repeat center center;
     background-size: cover;
@@ -23,7 +23,45 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
+    transition: all 0.3s ease; /* Smooth transition */
 }
+
+
+header .text-container {
+    display: flex; /* Use flexbox for centering */
+    
+    height: 100%; /* Take full height of the parent */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+
+
+header .image-container {
+    position: relative;
+    border-radius: 20px; /* Rounds the corners of the container */
+    overflow: hidden; /* Ensures the overlay doesn't spill outside the rounded corners */
+}
+
+
+
+header .image-container img {
+    border-radius: 20px; /* Rounds the corners of the image */
+    height: auto; /* Maintains the aspect ratio of the image */
+    display: block; /* Removes any default spacing/margin */
+    transition: all 0.3s ease; /* Smooth transition */
+    max-width: 60%; /* Ensures the image is responsive and fits within the container */
+    height: 60%; 
+    box-shadow: 8px 8px 8px rgba(11, 11, 11, 0.2);
+}
+
+
+
+
+
+
+
+
+
 
 .content-block {
     position: relative;
@@ -32,22 +70,99 @@ header {
 }
 
 #block0 {
-    /* background: rgba(0, 0, 0, 0.5);  */
     transform: skewY(-5deg);
     padding-top: 30rem;
     height: 400px;
     margin: -1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+#welcome-text {
+    font-size: 2rem;
+    color: white;
+    display: inline;
+    position: relative;
+    transform: skewY(5deg);
+}
+
+#welcome-text::after {
+    content: '|';
+    position: absolute;
+    right: -10px;
+    animation: blink 1s step-end infinite;
+    color: white;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+
+
 #block1 {
-    background: #3f3f42;
+    background: #3f3f46;
     transform: skewY(-5deg);
     padding-top: 10rem;
     height: 500px;
 }
 
+#block1 .block-content {
+    display: flex; /* Enables flexbox */
+    justify-content: space-between; /* Spaces the children (text and image container) */
+    align-items: center; /* Aligns children vertically in the center */
+    
+}
+
+#block1 .text-content {
+    /* Styles for your text content */
+    width: 50%;
+    transform: skewY(5deg) translateY(-200px) translateX(20px); /* Adjust based on your layout needs */
+    font-size: 25px;
+    color: #c1bebe; /* Example: Change text color */
+}
+
+.typing-container {
+    display: inline-block;
+    position: relative;
+    white-space: pre-wrap; /* Allows text to wrap normally */
+}
+
+.typing-cursor {
+    content: '';
+    border-right: .1em solid #c1bebe;
+    animation: blink 1s step-end infinite;
+    position: absolute;
+    right: 0;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+#block1 .image-container {
+    width: 475px; /* Example width */
+    height: 475px; /* Example height */
+    position: relative; /* Establishes a positioning context */
+    text-align: right; /* Keeps your alignment if needed */
+    transform: skewY(5deg) translate(-20px, -100px); /* Counteracts the parent's skew transformation and moves the container */
+}
+
+#block1 .image-container img {
+    position: absolute; /* Allows absolute positioning within container */
+    width: 90%; /* Adjusts the image width to fill the container */
+    height: 90%; /* Adjusts the image height to fill the container */
+    object-fit: cover; /* Adjusts the image size to cover the container without losing aspect ratio */
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+}
+
 #block2 {
-    background: #4a4a4d;
+    background: #3f3f42;
     color: white;
     transform: skewY(5deg);
     padding-top: 10rem;
@@ -55,16 +170,116 @@ header {
     margin-top: -20rem;
 }
 
+#block2 .block-content {
+    display: flex; /* Enables flexbox */
+    justify-content: space-between; /* Spaces the children (text and image container) */
+    align-items: center; /* Aligns children vertically in the center */
+    flex-direction: row-reverse; /* Reverses the order of flex items */
+}
+
+#block2 .text-content {
+    /* Styles for your text content */
+    width: 50%;
+    transform: skewY(-5deg) translateY(-200px) translateX(-20px); /* Adjust based on your layout needs */
+    font-size: 25px;
+    color: #c1bebe; /* Example: Change text color */
+    
+    text-align: left; /* Align text to the left */
+}
+
+#block2 .image-container {
+    width: 475px; /* Example width */
+    height: 475px; /* Example height */
+    position: relative; /* Establishes a positioning context */
+    text-align: left; /* Keeps your alignment if needed */
+    transform: skewY(-5deg) translate(20px, -100px); /* Counteracts the parent's skew transformation and moves the container */
+}
+
+#block2 .image-container img {
+    position: absolute; /* Allows absolute positioning within container */
+    width: 90%; /* Adjusts the image width to fill the container */
+    height: 90%; /* Adjusts the image height to fill the container */
+    object-fit: cover; /* Adjusts the image size to cover the container without losing aspect ratio */
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #block3 {
-    background: #3f3f42;
+    background: #3f3f46;
     transform: skewY(-5deg);
     padding-top: 10rem;
     height: 350px;
     margin-top: -5rem;
 }
 
+#block3 .block-content {
+    display: flex; /* Enables flexbox */
+    justify-content: space-between; /* Spaces the children (text and image container) */
+    align-items: center; /* Aligns children vertically in the center */
+    
+}
+
+#block3 .text-content {
+    /* Styles for your text content */
+    width: 50%;
+    transform: skewY(5deg) translateY(-200px) translateX(20px);; /* Adjust based on your layout needs */
+    font-size: 25px;
+    color: #c1bebe; /* Example: Change text color */
+    /* font-weight: bold */
+    
+}
+
+#block3 .image-container {
+    width: 475px; /* Example width */
+    height: 475px; /* Example height */
+    position: relative; /* Establishes a positioning context */
+    text-align: right; /* Keeps your alignment if needed */
+    transform: skewY(5deg) translate(-20px, -100px); /* Counteracts the parent's skew transformation and moves the container */
+}
+
+#block3 .image-container img {
+    position: absolute; /* Allows absolute positioning within container */
+    width: 90%; /* Adjusts the image width to fill the container */
+    height: 90%; /* Adjusts the image height to fill the container */
+    object-fit: cover; /* Adjusts the image size to cover the container without losing aspect ratio */
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Filler block */
 #block4 {
-    /* background: #37426c; */
     color: white;
     transform: skewY(5deg);
     padding-top: 10rem;
@@ -72,6 +287,7 @@ header {
     margin-top: -20rem;
 }
 
+/* global footer style */
 #footer {
     background: rgba(0, 0, 0, 0.5); 
     text-align: center;
@@ -81,84 +297,85 @@ header {
     width: 100%;
     z-index: 1000;
     height: auto;
+    font-size: 18px; /* Increase base font size */
+    
 }
-
-.footer-content {
-    text-align: center;
-    margin: 1rem 0;
-}
-
-.footer-center {
-    margin-bottom: 1rem;
-}
-
-.footer-line {
-    width: 80%;
-    margin: 0.5rem auto;
-    border: 0;
-    border-top: 1px solid white;
-}
-
 .footer-main {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    flex-wrap: wrap;
+    
+}
+.footer-center {
+    margin-bottom: 1rem;
 }
 
-.footer-form {
+/* top line */
+.footer-line {
+    width: 80%;
+    margin: 0.5rem auto;
+    border: 0;
+    border-top: 1px solid #c1bebe;;
+}
+
+/* all the content inside the lines */
+.footer-follow {
     flex: 1;
     margin: 1rem;
-    text-align: left;
     max-width: 500px;
 }
 
-.footer-form form {
-    display: flex;
-    flex-direction: column;
+/* social icons */
+/* Twitter icon color */
+.social-icons a .fab.fa-twitter {
+    color: #1DA1F2; /* Twitter's brand color */
 }
 
-.footer-form input, .footer-form textarea {
-    width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: none;
-    border-radius: 4px;
+/* Facebook icon color */
+.social-icons a .fab.fa-facebook-f {
+    color: #1877F2; /* Facebook's brand color */
 }
 
-.footer-form button {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    background: #4c5c96;
-    color: white;
-    cursor: pointer;
+/* Instagram icon color */
+.social-icons a .fab.fa-instagram {
+    color: #E4405F; /* A solid color representing Instagram */
 }
 
-.footer-form button:hover {
-    background: #37426c;
+/* LinkedIn icon color */
+.social-icons a .fab.fa-linkedin-in {
+    color: #0A66C2; /* LinkedIn's brand color */
 }
 
-.footer-right {
-    flex: 1;
-    margin: 1rem;
-    text-align: left;
-    max-width: 200px;
+ 
+
+/* bottom line */
+.footer-bottom .footer-line {
+    margin: 0.5rem auto;
 }
 
-.footer-right a {
-    color: white;
-    text-decoration: none;
-}
-
-.footer-right a:hover {
-    text-decoration: underline;
-}
-
+/* text under the line */
 .footer-bottom {
     text-align: center;
     padding-top: 1rem;
 }
 
-.footer-bottom .footer-line {
-    margin: 0.5rem auto;
+
+
+#footer p {
+    font-size: 20px; /* Slightly larger font size for paragraphs */
+}
+
+#footer .footer-follow p {
+    color: #c1bebe; /* Example: Change text color */
+    
+}
+
+#footer .social-icons a {
+    font-size: 24px; 
+}
+
+#footer .footer-bottom p {
+    font-size: 16px; /* Smaller font size for the bottom text */
+    
 }

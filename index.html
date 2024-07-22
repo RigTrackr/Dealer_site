@@ -5,33 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dealer Website</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="page-wrapper">
         <!-- Header -->
         <header id="header" class="alt">
-            <h1>AllTruck Sales</h1>
+            <div class="text-container">
+                <div class="image-container">
+                    <img src="assets/images/atslogo.jpg" alt="AllTruck Sales Logo">
+                </div>
+            </div>
         </header>
 
         <!-- Content Blocks -->
-        <!-- Content Blocks -->
-        <div id="block0" class="content-block"></div>
+        <div id="block0" class="content-block">
+            <div id="welcome-text"></div>
+        </div>
         <div id="block1" class="content-block">
             <div class="block-content">
-                <h2>Block 1</h2>
-                <p>Content for block 1 goes here.</p>
+                <!-- Content to go on the left -->
+                <div class="text-content">
+                    <p id="block1-text" class="typing-container"></p> 
+                </div>
+                <!-- Image container to go on the right -->
+                <div class="image-container">
+                    <img src="assets/images/block1.jpg">
+                </div>
             </div>
         </div>
         <div id="block2" class="content-block">
             <div class="block-content">
-                <h2>Block 2</h2>
-                <p>Content for block 2 goes here.</p>
+                <!-- Content to go on the left -->
+                <div class="text-content">
+                    <p>Our experienced team is here to help you find the right truck at the right price. We offer competitive financing options and flexible purchase plans to suit your budget. With AllTruck Sales, you can drive away with confidence, knowing you have a dependable partner for all your trucking needs.</p>
+                </div>
+                <!-- Image container to go on the right -->
+                <div class="image-container">
+                    <img src="assets/images/block2.jpg"> <!-- Update the image source as needed -->
+                </div>
             </div>
         </div>
         <div id="block3" class="content-block">
             <div class="block-content">
-                <h2>Block 3</h2>
-                <p>Content for block 3 goes here.</p>
+                <!-- Content to go on the left -->
+                <div class="text-content">
+                    <p>Discover why so many in the industry trust AllTruck Sales for their semi-truck purchases. Contact our sales team today and take the first step toward upgrading your fleet with the best trucks on the market.</p>
+                </div>
+                <!-- Image container to go on the right -->
+                <div class="image-container">
+                    <img src="assets/images/block3.jpg"> <!-- Update the image source as needed -->
+                </div>
             </div>
         </div>
         <div id="block4" class="content-block"></div>
@@ -40,33 +66,27 @@
     <section id="footer">
         <div class="footer-content">
             <div class="footer-center">
-                <p>Get In Touch:</p>
                 <hr class="footer-line">
             </div>
             <div class="footer-main">
-                <div class="footer-form">
-                    <form>
-                        <input type="text" id="name" name="name" placeholder="Name">
-                        <input type="email" id="email" name="email" placeholder="Email">
-                        <textarea id="message" name="message" placeholder="Message"></textarea>
-                        <button type="submit">Send Message</button>
-                    </form>
-                </div>
-                <div class="footer-right">
+                <div class="footer-follow">
+                    <p>Get In Touch: info@alltrucksales.com</p>
                     <p>Follow us on:</p>
-                    <p>
-                        <a href="#">Twitter</a><br>
-                        <a href="#">Facebook</a><br>
-                        <a href="#">Instagram</a>
-                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
             <hr class="footer-line">
-            <p>&copy; 2024 AllTruck Sales INC. All rights reserved. | 501 Kaw Drive, Edwardsville, KS 66111 | 816.921.9200 | info@alltrucksales.com</p>
+            <p>&copy; 2024 AllTruck Sales INC. All rights reserved. | 501 Kaw Drive, Edwardsville, KS 66111 | 816.921.9200</p>
         </div>
     </section>
+    
 
     <!-- Scripts -->
     <script src="assets/js/scripts.js"></script>
